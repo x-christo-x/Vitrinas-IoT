@@ -1,0 +1,97 @@
+/* Estilos personalizados y animaciones de alta fidelidad para Kiosko / Vitrina IoT */
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.25), 0 0 50px rgba(59, 130, 246, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 45px rgba(59, 130, 246, 0.45), 0 0 75px rgba(59, 130, 246, 0.2);
+    }
+}
+
+@keyframes unlockSuccessPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+        border-color: rgba(34, 197, 94, 0.9);
+    }
+    70% {
+        box-shadow: 0 0 0 25px rgba(34, 197, 94, 0);
+        border-color: rgba(34, 197, 94, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        border-color: rgba(34, 197, 94, 0.6);
+    }
+}
+
+@keyframes scanLineAnimation {
+    0% {
+        top: 0%;
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0.8;
+    }
+}
+
+.qr-box-glow {
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+.unlock-glow {
+    animation: unlockSuccessPulse 2s infinite ease-in-out;
+}
+
+.scan-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #38bdf8, #818cf8, transparent);
+    box-shadow: 0 0 12px #38bdf8;
+    animation: scanLineAnimation 2.8s linear infinite alternate;
+    pointer-events: none;
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar for event logs */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.6);
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.9);
+}
+
+/* Ambient background particles/grid */
+.cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
